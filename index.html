@@ -28,10 +28,33 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h3>
-          <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to SciTran.
+          NIMS Schematic Overview
         </h3>
-
-          <p>Stay tuned... we're working on the site.</p>
+          <p>
+            <img src="images/nims_diagram_vertical.png" alt="nims" width="625" border="0" usemap="#Map" />
+            <map name="Map" id="Map">
+              
+              <area shape="rect" coords="375,51,536,131" href="#data_management" title="Data are managed through a web interface engineered in AngularJS and HTML5."/>
+              
+              <area shape="rect" coords="403,378,576,464" href="#automatic_processor" alt="Automatic Processor" title="Automatically processes data from the database..." />
+              
+              <area shape="rect" coords="112,43,213,178" href="#user" alt="User" title="Users access their data via secure (https) connections to the data management framework" />
+              
+              <area shape="rect" coords="88,335,210,466" href="#instrument" alt="Instrument" title="The instrument can be any which outputs data in a standard format. For example, GE and Siemens scanners output DICOM files, which feed the reaper." />
+              
+              <area shape="rect" coords="242,394,375,477" href="#reaper" alt="Reaper" title="The REAPER talks directy, via a secure connection, to the instrument. No user interaction is required to get data in." />
+              
+              <area shape="rect" coords="221,239,420,305" href="#fs_db" alt="Filesystem and Database" title="NIMS is build using ZFS for redundant storage and MongoDB with dynamic schemas."/>
+              
+              <area shape="poly" coords="213,286,214,253,215,232,241,226,313,229,367,229,406,229,421,230,433,236,430,256,430,277,430,293,422,319,473,290,487,259,479,234,465,220,418,194,384,183,336,181,290,181,256,181,236,188,215,193,196,205,177,221,169,239,167,258,173,283,181,294,210,311,248,322,287,333,327,333,367,329,418,322,421,307,423,310,406,312,357,310,322,310,294,312,262,312,235,314,222,312,213,306,214,284" href="#restful_api" alt="RESTFul API" title="The REST API used in nims..." />
+              
+              <area shape="poly" coords="230,627,246,652,283,663,333,659,362,630,363,599,386,589,430,585,435,566,426,556,378,559,353,559,327,547,303,539,272,538,246,543,233,556,223,579,224,607" href="#inter_nims" alt="InterNIMS" title="InterNIMS allows site to communicate with one another securely, permitting remote sites to search, discover and share data with one another" />
+              
+              <area shape="rect" coords="15,631,213,826" href="#remote_site" alt="Remote Sites" title="Remote sites running their own instance of NIMS can communicate with one another securely allowing for researchers from any one site to search and share with those at other sites around the world."/>
+              
+              <area shape="rect" coords="385,627,593,827" href="#remote_site" alt="Remote Sites" title="Remote sites running their own instance of NIMS can communicate with one another securely allowing for researchers from any one site to search and share with those at other sites around the world." />
+            </map>
+          </p>
 
 
       </section>
