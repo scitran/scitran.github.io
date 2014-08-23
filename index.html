@@ -28,30 +28,27 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h2>Neurobiological Image Management System (NIMS)</h2>
-          <p>NIMS is a scientific data management system, specifically designed for neuroimaging data. </p>
-          <p>Click each section of the diagram to learn more about NIMS and access documentation. </p>
-            <img src="images/nims_diagram_vertical.png" alt="nims" width="625" border="0" usemap="#Map"/>
+          <p>NIMS is a scientific data management system, specifically designed for neuroimaging data. Click each section of the diagram below to learn more about NIMS and access documentation. </p>
+            <img src="images/nims_diagram_v2.png" alt="nims" width="960" border="0" usemap="#Map"/>
             <map name="Map" id="Map">
 
-              <area shape="rect" coords="375,51,536,131" href="#data_management" title="Data are managed through a web interface engineered in AngularJS and HTML5."/>
+              <area shape="rect" coords="120,568,378,684" href="#data_management" title="Data are managed through a web interface engineered in AngularJS and HTML5."/>
 
-              <area shape="rect" coords="403,378,576,464" href="#automatic_processor" alt="Automatic Processor" title="Automatically processes data from the database..." />
+              <area shape="rect" coords="580,121,818,221" href="#automatic_processor" alt="Automatic Processor" title="Automatically processes data from the database..." />
 
-              <area shape="rect" coords="112,43,213,178" href="#user" alt="User" title="Users access their data via secure (https) connections to the data management framework" />
+              <area shape="rect" coords="663,511,778,710" href="#user" alt="User" title="Users access their data via secure (https) connections to the data management framework" />
 
-              <area shape="rect" coords="88,335,210,466" href="#instrument" alt="Instrument" title="The instrument can be any which outputs data in a standard format. For example, GE and Siemens scanners output DICOM files, which feed the reaper." />
+              <area shape="rect" coords="111,95,282,277" href="#instrument" alt="Instrument" title="The instrument can be any which outputs data in a standard format. For example, GE and Siemens scanners output DICOM files, which feed the reaper." />
 
-              <area shape="rect" coords="242,394,375,477" href="#reaper" alt="Reaper" title="The REAPER talks directy, via a secure connection, to the instrument. No user interaction is required to get data in." />
+              <area shape="rect" coords="367,117,545,223" href="#reaper" alt="Reaper" title="The REAPER talks directy, via a secure connection, to the instrument. No user interaction is required to get data in." />
 
-              <area shape="rect" coords="221,239,420,305" href="#fs_db" alt="Filesystem and Database" title="NIMS is built using ZFS for redundant storage and MongoDB with dynamic schemas."/>
+              <area shape="rect" coords="227,304,724,493" href="#restful_api" alt="RESTFul API Filesystem and Database" title="NIMS uses a RESTful API and is built using ZFS for redundant storage and MongoDB with dynamic schemas."/>
 
-              <area shape="poly" coords="213,286,214,253,215,232,241,226,313,229,367,229,406,229,421,230,433,236,430,256,430,277,430,293,422,319,473,290,487,259,479,234,465,220,418,194,384,183,336,181,290,181,256,181,236,188,215,193,196,205,177,221,169,239,167,258,173,283,181,294,210,311,248,322,287,333,327,333,367,329,418,322,421,307,423,310,406,312,357,310,322,310,294,312,262,312,235,314,222,312,213,306,214,284" href="#restful_api" alt="RESTFul API" title="The REST API used in nims..." />
+              <area shape="poly" coords="382,904,389,939,393,1037,448,1035,554,1036,553,958,558,921,560,861,551,844,546,838,529,824,506,816,479,813,455,815,424,818,409,827,400,835,389,860,380,879" href="#inter_nims" alt="InterNIMS" title="InterNIMS allows site to communicate with one another securely, permitting remote sites to search, discover and share data with one another" />
 
-              <area shape="poly" coords="230,627,246,652,283,663,333,659,362,630,363,599,386,589,430,585,435,566,426,556,378,559,353,559,327,547,303,539,272,538,246,543,233,556,223,579,224,607" href="#inter_nims" alt="InterNIMS" title="InterNIMS allows site to communicate with one another securely, permitting remote sites to search, discover and share data with one another" />
+              <area shape="rect" coords="33,817,318,1066" href="#remote_site" alt="Remote Sites" title="Remote sites running their own instance of NIMS can communicate with one another securely allowing for researchers from any one site to search and share with those at other sites around the world."/>
 
-              <area shape="rect" coords="15,631,213,826" href="#remote_site" alt="Remote Sites" title="Remote sites running their own instance of NIMS can communicate with one another securely allowing for researchers from any one site to search and share with those at other sites around the world."/>
-
-              <area shape="rect" coords="385,627,593,827" href="#remote_site" alt="Remote Sites" title="Remote sites running their own instance of NIMS can communicate with one another securely allowing for researchers from any one site to search and share with those at other sites around the world." />
+              <area shape="rect" coords="613,823,898,1067" href="#remote_site" alt="Remote Sites" title="Remote sites running their own instance of NIMS can communicate with one another securely allowing for researchers from any one site to search and share with those at other sites around the world." />
             </map>
           
           <h3 id="instrument">Instrument <a href="#">&#8613;</a></h3>
@@ -60,14 +57,13 @@
           <h3 id="reaper">Reaper <a href="#">&#8613;</a></h3>
             <p>Reaper is the point of contact between the Instrument and the NIMS pipeline. Reaper is engineered in Python and "talks" directly with the instrument and "reaps" every data file that is captured (e.g., every DICOM file) for sorting and processing into the NIMS database. Reaper communicates with the rest of the NIMS pipeline via the RESTful API. </p>
             
-            <p>Importantly, Reaper allows data to enter the NIMS framework without any user interaction whatsoever. If a scan is performed on an intrument, the raw data will be captured and entered into the database, period. This removes worries about user compliance and shifts the burden of capture and archiving from the user to the software.</p>
-
-          <h3 id="fs_db">Filesystem and Database <a href="#">&#8613;</a></h3>
-            <p>Once Reaper has sent the data thorugh the API those data are sorted (using metadata) and insterted into the database. NIMS uses <a href="//mongodb.org" target="_blank">MongoDB</a> - which is a no-SQL, cross-platform, document-oriented database. MongoDB allows the NIMS database to be incredibly flexible by virtue of its dynamic schemas.</p> 
+            <p>Importantly, Reaper allows data to enter the NIMS framework without any user interaction whatsoever. If a scan is performed on an intrument, the raw data will be captured and entered into the database, period. This removes worries about user compliance and shifts the burden of capture and archiving from the user to the software.</p>            
             
             <p>NIMS servers run <a href="//open-zfs.org/wiki/Main_Page" target="_blank">OpenZFS</a> for raw data storage and backup. ZFS is a combined file system and logical volume manager which provides protection against data corruption, support for high storage capacities, efficient data compression, integration of the concepts of filesystem and volume management, snapshots and copy-on-write clones, continuous integrity checking and automatic repair, RAID-Z and native NFSv4 ACLs <sup><a href="//en.wikipedia.org/wiki/Zfs" target="_blank">ref</a></sup>.</p>
 
           <h3 id="restful_api">RESTful API <a href="#">&#8613;</a></h3>
+            <p>Once Reaper has sent the data thorugh the API those data are sorted (using metadata) and insterted into the database. NIMS uses <a href="//mongodb.org" target="_blank">MongoDB</a> - which is a no-SQL, cross-platform, document-oriented database. MongoDB allows the NIMS database to be incredibly flexible by virtue of its dynamic schemas.</p> 
+
             <p>The NIMS API (Application Programming Interface) has been engineered to adhere to the tenets of the REST (REpresentational State Transfer) framework and architectural style. The RESTful architectural style "ignores the details of component implementation and protocol syntax in order to focus on the roles of components, the constraints upon their interaction with other components, and their interpretation of significant data elements" <sup><a href="//en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">ref</a></sup>. </p>
 
           <h3 id="automatic_processor">Automatic Processor <a href="#">&#8613;</a></h3>
