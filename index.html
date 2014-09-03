@@ -7,7 +7,7 @@
     <meta name="description" content="Scitran.github.io : ">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
- 
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="javascripts/smooth-scroll.js"></script>
 
@@ -32,7 +32,7 @@
       <section id="main_content" class="inner">
         <h2 id="nims">Neurobiological Image Management System (NIMS)</h2>
           <p>NIMS is a scientific data management system, specifically designed for neuroimaging data. <a href="#diagram">Click each section of the diagram below</a> to learn more about NIMS and access documentation. </p>
-            <img id="diagram" src="images/nims_diagram_v3.png" alt="nims" width="960" border="0" usemap="#Map"/>
+            <img id="diagram" src="images/nims_diagram.png" alt="nims" width="960" border="0" usemap="#Map"/>
             <map name="Map" id="Map">
 
               <area shape="rect" coords="43,412,244,503" href="#data_management" title="Data are managed through a web interface engineered in AngularJS and HTML5."/>
@@ -41,7 +41,7 @@
 
 
               <area shape="rect" coords="462,363,586,524" href="#user" alt="User" title="Users access data via secure (https) connections to the NIMS web UI." />
-              
+
               <area shape="rect" coords="23,27,169,175" href="#instrument" alt="Instrument" title="The instrument connects direcly to the reaper. Every byte is captured automatically." />
 
               <area shape="rect" coords="231,37,388,140" href="#reaper" alt="Reaper" title="The REAPER connects directy, via a secure connection, to the instrument. No user interaction is required to get data in and no byte is lost." />
@@ -54,25 +54,25 @@
 
               <area shape="rect" coords="707,348,934,540" href="#remote_site" alt="Remote Sites" title="Remote sites running their own instance of NIMS can communicate with one another securely, allowing researchers from any site to search and share with those at other sites around the world." />
             </map>
-          
+
           <h3 id="instrument">Instrument <a href="#nims">&#8613;</a></h3>
             <p>The instrument (in this diagram represented by an MRI scanner) trasmits data directly and securely into the NIMS pipeline via the Reaper. The trasfer takes place through a private network connection. Other instruments, which output a standardized file type (e.g., DICOM) can be used as the source for data coming into the pipeline. </p>
 
           <h3 id="reaper">Reaper <a href="#nims">&#8613;</a></h3>
             <p>Reaper is the point of contact between the Instrument and the NIMS pipeline. Reaper is engineered in Python and talks directly with the instrument, from which it 'reaps' every data file that is captured by the instrument (e.g., every DICOM file) for sorting and processing into the NIMS database. Reaper communicates with the rest of the NIMS pipeline via the RESTful API. </p>
-            
-            <p>Importantly, Reaper allows data to enter the NIMS framework without any user interaction whatsoever. If a scan is performed on an intrument the raw data will be captured and sorted into the database, period. This removes worries about user compliance and shifts the burden of capture and archiving from the user to the software.</p>            
-            
+
+            <p>Importantly, Reaper allows data to enter the NIMS framework without any user interaction whatsoever. If a scan is performed on an intrument the raw data will be captured and sorted into the database, period. This removes worries about user compliance and shifts the burden of capture and archiving from the user to the software.</p>
+
             <p>NIMS servers run <a href="http://open-zfs.org/wiki/Main_Page" target="_blank">OpenZFS</a> for raw data storage and backup. ZFS is a combined file system and logical volume manager which provides protection against data corruption, support for high storage capacities, efficient data compression, integration of the concepts of filesystem and volume management, snapshots and copy-on-write clones, continuous integrity checking and automatic repair, RAID-Z and native NFSv4 ACLs <sup><a href="http://en.wikipedia.org/wiki/Zfs" target="_blank">ref</a></sup>.</p>
 
           <h3 id="restful_api">RESTful API <a href="#nims">&#8613;</a></h3>
-            <p>Once Reaper has sent the data thorugh the API those data are sorted (using metadata) into the database. NIMS uses <a href="http://mongodb.org" target="_blank">MongoDB</a> - which is a no-SQL, cross-platform, document-oriented database. MongoDB allows the NIMS database to be incredibly flexible by virtue of its dynamic schemas.</p> 
+            <p>Once Reaper has sent the data thorugh the API those data are sorted (using metadata) into the database. NIMS uses <a href="http://mongodb.org" target="_blank">MongoDB</a> - which is a no-SQL, cross-platform, document-oriented database. MongoDB allows the NIMS database to be incredibly flexible by virtue of its dynamic schemas.</p>
 
             <p>The NIMS API (Application Programming Interface) has been engineered to adhere to the tenets of the REST (REpresentational State Transfer) framework and architectural style. The RESTful architectural style "ignores the details of component implementation and protocol syntax in order to focus on the roles of components, the constraints upon their interaction with other components, and their interpretation of significant data elements" <sup><a href="http://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">ref</a></sup>. </p>
 
           <h3 id="automatic_processor">Automatic Processor <a href="#nims">&#8613;</a></h3>
             <p>Once raw data are reaped and sorted into the database they are automatically processed using tools engineered in Python, using various open-source libraries (e.g., <a href="http://code.google.com/p/pydicom/" target="_blank"> pydicom</a>, <a href="http://nipy.org/nibabel/" target="_blank">NiBabel</a>, <a href="http://dcmstack.readthedocs.org/en/v0.6.1/" target="_blank">DcmStack</a>, etc.) . </p>
-            
+
             <p><a href="http://scitran.github.io/nimsdata">NIMSdata</a>, our custom-engineered, open-source library, takes raw data and performs various processing tasks. For example, raw DICOM data from GE or Siemens scanners are converted to a widely used, compressed, file format -- NIfTI. Quality Assurance metrics are also automatically computed and made available alongside raw data. We have also built upon visualization toolkits to make viewing data within the NIMS UI as simple as clicking a button.</p>
 
             <p>NIMSdata is engineered to be modular -- researchers can design their own purpose-built computational modules that can plug-in to NIMSdata and perform special processing operations.</p>
@@ -92,15 +92,15 @@
             <p>We also developed our Automatic Processing pipeline with the user in mind. A very well known issue in neuroimaging is conversion of raw data to a standardized file format, adhering to accepted conventions. We take this step for the user and convert GE and Siemens raw DICOM files to NIfTI. Those NIfTI files are then stored in the database and appear alongside the raw data, allowing the user to download raw data, NIfTI data, or both. Not only does this make sure that file formats and conventions are consistently correct, but alleviates the computational and organizational burdon that users typically face. </p>
 
             <p>Nowhere is our user-focused approach more evident than in the UI design of the NIMS front-end web application. The NIMS UI is the only point of contact to the entire system for most users. The prime objective of our UI development team is making a simple, yet incredibly powerful, interface that makes data management easy.</p>
-            
+
           <h3 id="inter_nims">InterNIMS <a href="#nims">&#8613;</a></h3>
-            <p>InterNIMS makes it possible for peer-discovery, cross-site database queries, and data sharing. While running, a NIMS site will brodcast its existence to InterNIMS, which will securely provide across-site access to resources.</p> 
+            <p>InterNIMS makes it possible for peer-discovery, cross-site database queries, and data sharing. While running, a NIMS site will brodcast its existence to InterNIMS, which will securely provide across-site access to resources.</p>
 
           <h3 id="remote_site">Remote Sites <a href="#nims">&#8613;</a></h3>
             <p>Remote sites running their own instance of NIMS can communicate with one another securely (via InterNIMS) allowing for researchers from any one site to search and share data with those at other sites around the world.</p>
 
       </section>
-    </div> 
+    </div>
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
@@ -114,18 +114,18 @@
           </tr>
           <tr>
             <td>
-              <a href="//scitran.stanford.edu/team">Team</a> &nbsp;| &nbsp; 
-              <a href="//scitran.stanford.edu/contact">Contact</a> &nbsp;| &nbsp; 
-              <a href="//scitran.stanford.edu">Scientific Transparency at Stanford</a> &nbsp;| &nbsp; 
+              <a href="//scitran.stanford.edu/team">Team</a> &nbsp;| &nbsp;
+              <a href="//scitran.stanford.edu/contact">Contact</a> &nbsp;| &nbsp;
+              <a href="//scitran.stanford.edu">Scientific Transparency at Stanford</a> &nbsp;| &nbsp;
               <a href="//cni.stanford.edu/nims">NIMS at CNI (Stanford)</a>
             </td>
             <td></td>
             <td style="text-align:right;">
-              NIMS is open-source software, released under the <a href="//opensource.org/licenses/MIT">MIT license</a>. 
+              NIMS is open-source software, released under the <a href="//opensource.org/licenses/MIT">MIT license</a>.
             </td>
           </tr>
          </table>
-            
+
       </footer>
     </div>
 
