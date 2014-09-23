@@ -35,24 +35,26 @@
             <img id="diagram" src="images/nims_diagram.png" alt="nims" width="960" border="0" usemap="#Map"/>
             <map name="Map" id="Map">
 
-              <area shape="rect" coords="43,412,244,503" href="#data_management" title="Data are managed through a web interface engineered in AngularJS and HTML5."/>
+              <area shape="rect" coords="207,36,410,123" href="#data_management" title="Data are managed through a web interface engineered in AngularJS and HTML5."/>
 
-              <area shape="rect" coords="405,42,608,136" href="#automatic_processor" alt="Automatic Processor" title="Automatically processes data from the database and makes it available for download through the web UI." />
+              <area shape="rect" coords="396,429,632,523" href="#automated_processor" alt="Automatic Processor" title="Automatically processes data from the database and makes it available for download through the web UI." />
 
+              <area shape="rect" coords="529,24,629,158" href="#user" alt="User" title="Users access data via secure (https) connections to the NIMS web UI." />
 
-              <area shape="rect" coords="462,363,586,524" href="#user" alt="User" title="Users access data via secure (https) connections to the NIMS web UI." />
+              <area shape="rect" coords="29,28,142,144" href="#instrument" alt="Instrument" title="The instrument connects direcly to the reaper. Every byte is captured automatically." />
 
-              <area shape="rect" coords="23,27,169,175" href="#instrument" alt="Instrument" title="The instrument connects direcly to the reaper. Every byte is captured automatically." />
+              <area shape="rect" coords="37,428,169,521" href="#reaper" alt="Reaper" title="The REAPER connects directy, via a secure connection, to the instrument. No user interaction is required to get data in and no byte is lost." />
 
-              <area shape="rect" coords="231,37,388,140" href="#reaper" alt="Reaper" title="The REAPER connects directy, via a secure connection, to the instrument. No user interaction is required to get data in and no byte is lost." />
+              <area shape="rect" coords="161,211,501,359" href="#restful_api" alt="RESTFul API Filesystem and Database" title="NIMS uses a RESTful API and is built using ZFS for redundant storage and MongoDB with dynamic schemas."/>
 
-              <area shape="rect" coords="126,197,525,346" href="#restful_api" alt="RESTFul API Filesystem and Database" title="NIMS uses a RESTful API and is built using ZFS for redundant storage and MongoDB with dynamic schemas."/>
+              <area shape="rect" coords="758,228,950,322" href="#inter_nims" alt="InterNIMS" title="InterNIMS allows sites to communicate with one another securely, permitting remote sites to search, discover and share data with one another." />
 
-              <area shape="rect" coords="765,228,957,322" href="#inter_nims" alt="InterNIMS" title="InterNIMS allows sites to communicate with one another securely, permitting remote sites to search, discover and share data with one another." />
+              <area shape="rect" coords="697,9,924,201" href="#remote_site" alt="Remote Sites" title="Remote sites running their own instance of NIMS can communicate with one another securely, allowing researchers from any site to search and share with those at other sites around the world."/>
 
-              <area shape="rect" coords="710,10,937,202" href="#remote_site" alt="Remote Sites" title="Remote sites running their own instance of NIMS can communicate with one another securely, allowing researchers from any site to search and share with those at other sites around the world."/>
+              <area shape="rect" coords="698,349,925,541" href="#remote_site" alt="Remote Sites" title="Remote sites running their own instance of NIMS can communicate with one another securely, allowing researchers from any site to search and share with those at other sites around the world." />
 
-              <area shape="rect" coords="707,348,934,540" href="#remote_site" alt="Remote Sites" title="Remote sites running their own instance of NIMS can communicate with one another securely, allowing researchers from any site to search and share with those at other sites around the world." />
+              <area shape="rect" coords="219,441,346,509" href="#nimsdata" alt="NIMS Data" title="NIMS Data"/>
+
             </map>
 
           <h3 id="instrument">Instrument <a href="#nims">&#8613;</a></h3>
@@ -70,9 +72,10 @@
 
             <p>The NIMS API (Application Programming Interface) has been engineered to adhere to the tenets of the REST (REpresentational State Transfer) framework and architectural style. The RESTful architectural style "ignores the details of component implementation and protocol syntax in order to focus on the roles of components, the constraints upon their interaction with other components, and their interpretation of significant data elements" <sup><a href="http://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">ref</a></sup>. </p>
 
-          <h3 id="automatic_processor">Automatic Processor <a href="#nims">&#8613;</a></h3>
+          <h3 id="automated_processor">Automated Processor <a href="#nims">&#8613;</a></h3>
             <p>Once raw data are reaped and sorted into the database they are automatically processed using tools engineered in Python, using various open-source libraries (e.g., <a href="http://code.google.com/p/pydicom/" target="_blank"> pydicom</a>, <a href="http://nipy.org/nibabel/" target="_blank">NiBabel</a>, <a href="http://dcmstack.readthedocs.org/en/v0.6.1/" target="_blank">DcmStack</a>, etc.) . </p>
 
+          <h3 id="nimsdata">NIMSdata <a href="#nims">&#8613;</a></h3>
             <p><a href="http://scitran.github.io/nimsdata">NIMSdata</a>, our custom-engineered, open-source library, takes raw data and performs various processing tasks. For example, raw DICOM data from GE or Siemens scanners are converted to a widely used, compressed, file format -- NIfTI. Quality Assurance metrics are also automatically computed and made available alongside raw data. We have also built upon visualization toolkits to make viewing data within the NIMS UI as simple as clicking a button.</p>
 
             <p>NIMSdata is engineered to be modular -- researchers can design their own purpose-built computational modules that can plug-in to NIMSdata and perform special processing operations.</p>
