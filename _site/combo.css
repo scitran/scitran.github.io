@@ -912,3 +912,14 @@ table {
   .bg-fork { 
     background-color: rgba(0, 164, 224, 0) !important; 
   }
+
+  img.round {   
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    float: center;
+  }
+
+  #intro {
+    background:url("img/data_bg.png");
+  }
