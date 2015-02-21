@@ -1,136 +1,64 @@
+---
+---
 <!DOCTYPE html>
-<html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.title }}</title>
+	<meta name="keywords" content="{{ site.keywords }}">
+	<meta name="description" content="{{ site.description }}">
+  <link rel="stylesheet" href="combo.css">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  {% if site.favicon %}<link rel="shortcut icon" href="{{ site.favicon }}" type="image/x-icon">{% endif %}
+	{% if site.touch_icon %}<link rel="apple-touch-icon" href="{{ site.touch_icon }}">{% endif %}
+</head>
+<body>
+  <div id="main">
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Scitran.github.io : ">
+    <nav><ul>
+      {% for node in site.posts reversed %}
+        {% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
+        <li class="p-{{id}}"><a href="#{{id}}">{{node.title}}</a></li>
+      {% endfor %}
+    </ul></nav>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="javascripts/smooth-scroll.js"></script>
+    {% for page in site.posts reversed %}
+      {% capture id %}{{ page.id | remove:'/' | downcase }}{% endcapture %}
+      <div id="{{id}}" class="section p-{{id}}">
+        {% if page.icon %}
+        <div class="subtlecircle sectiondivider imaged">
+          <img src="{{page.icon}}" alt="section icon" />
+          <h5 class="icon-title">{{ page.title }}</h5>
+        </div>
+        {% elsif page.fa-icon %}
+        <div class="subtlecircle sectiondivider faicon">
+          <span class="fa-stack">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-{{ page.fa-icon }} fa-stack-1x"></i>
+          </span>
+          <h5 class="icon-title">{{ page.title }}</h5>
+        </div>
+        {% endif %}
+        <div class="container {{ page.style }}">
+          {{ page.content }}
+        </div>
+      </div>
+    {% endfor %}
 
-    <title>Scitran.github.io</title>
-  </head>
 
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/scitran">View on GitHub</a>
-
-          <h1 id="project_title">Scientific Transparency</h1>
-          <h2 id="project_tagline">Saving Science. Starting with Neuroscience.</h2>
-
-        </header>
+    <div id="footer" class="section text-white">
+      <div class="container">
+        {% capture foottext %} {% include footer.md %} {% endcapture %}
+        {{ foottext | markdownify }}
+      </div>
     </div>
+  </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h2 id="nims">Neurobiological Image Management System (NIMS)</h2>
-          <p>NIMS is a scientific data management system, specifically designed for neuroimaging data. <a href="#diagram">Click each section of the diagram below</a> to learn more about NIMS and access documentation. </p>
-            <img id="diagram" src="images/nims_diagram.png" alt="nims" width="960" border="0" usemap="#Map"/>
-            <map name="Map" id="Map">
-
-              <area shape="rect" coords="207,36,410,123" href="#data_management" title="Data are managed through a web interface engineered in AngularJS and HTML5."/>
-
-              <area shape="rect" coords="396,429,632,523" href="#automated_processor" alt="Automatic Processor" title="Automatically processes data from the database and makes it available for download through the web UI." />
-
-              <area shape="rect" coords="529,24,629,158" href="#user" alt="User" title="Users access data via secure (https) connections to the NIMS web UI." />
-
-              <area shape="rect" coords="29,28,142,144" href="#instrument" alt="Instrument" title="The instrument connects direcly to the reaper. Every byte is captured automatically." />
-
-              <area shape="rect" coords="37,428,169,521" href="#reaper" alt="Reaper" title="The REAPER connects directy, via a secure connection, to the instrument. No user interaction is required to get data in and no byte is lost." />
-
-              <area shape="rect" coords="161,211,501,359" href="#restful_api" alt="RESTFul API Filesystem and Database" title="NIMS uses a RESTful API and is built using ZFS for redundant storage and MongoDB with dynamic schemas."/>
-
-              <area shape="rect" coords="758,228,950,322" href="#inter_nims" alt="InterNIMS" title="InterNIMS allows sites to communicate with one another securely, permitting remote sites to search, discover and share data with one another." />
-
-              <area shape="rect" coords="697,9,924,201" href="#remote_site" alt="Remote Sites" title="Remote sites running their own instance of NIMS can communicate with one another securely, allowing researchers from any site to search and share with those at other sites around the world."/>
-
-              <area shape="rect" coords="698,349,925,541" href="#remote_site" alt="Remote Sites" title="Remote sites running their own instance of NIMS can communicate with one another securely, allowing researchers from any site to search and share with those at other sites around the world." />
-
-              <area shape="rect" coords="219,441,346,509" href="#nimsdata" alt="NIMS Data" title="NIMS Data"/>
-
-            </map>
-
-          <h3 id="instrument">Instrument <a href="#nims">&#8613;</a></h3>
-            <p>The instrument (in this diagram represented by an MRI scanner) trasmits data directly and securely into the NIMS pipeline via the Reaper. The trasfer takes place through a private network connection. Other instruments, which output a standardized file type (e.g., DICOM) can be used as the source for data coming into the pipeline. </p>
-
-          <h3 id="reaper">Reaper <a href="#nims">&#8613;</a></h3>
-            <p>Reaper is the point of contact between the Instrument and the NIMS pipeline. Reaper is engineered in Python and talks directly with the instrument, from which it 'reaps' every data file that is captured by the instrument (e.g., every DICOM file) for sorting and processing into the NIMS database. Reaper communicates with the rest of the NIMS pipeline via the RESTful API. </p>
-
-            <p>Importantly, Reaper allows data to enter the NIMS framework without any user interaction whatsoever. If a scan is performed on an intrument the raw data will be captured and sorted into the database, period. This removes worries about user compliance and shifts the burden of capture and archiving from the user to the software.</p>
-
-            <p>NIMS servers run <a href="http://open-zfs.org/wiki/Main_Page" target="_blank">OpenZFS</a> for raw data storage and backup. ZFS is a combined file system and logical volume manager which provides protection against data corruption, support for high storage capacities, efficient data compression, integration of the concepts of filesystem and volume management, snapshots and copy-on-write clones, continuous integrity checking and automatic repair, RAID-Z and native NFSv4 ACLs <sup><a href="http://en.wikipedia.org/wiki/Zfs" target="_blank">ref</a></sup>.</p>
-
-          <h3 id="restful_api">RESTful API <a href="#nims">&#8613;</a></h3>
-            <p>Once Reaper has sent the data thorugh the API those data are sorted (using metadata) into the database. NIMS uses <a href="http://mongodb.org" target="_blank">MongoDB</a> - which is a no-SQL, cross-platform, document-oriented database. MongoDB allows the NIMS database to be incredibly flexible by virtue of its dynamic schemas.</p>
-
-            <p>The NIMS API (Application Programming Interface) has been engineered to adhere to the tenets of the REST (REpresentational State Transfer) framework and architectural style. The RESTful architectural style "ignores the details of component implementation and protocol syntax in order to focus on the roles of components, the constraints upon their interaction with other components, and their interpretation of significant data elements" <sup><a href="http://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">ref</a></sup>. </p>
-
-          <h3 id="automated_processor">Automated Processor <a href="#nims">&#8613;</a></h3>
-            <p>Once raw data are reaped and sorted into the database they are automatically processed using tools engineered in Python, using various open-source libraries (e.g., <a href="http://code.google.com/p/pydicom/" target="_blank"> pydicom</a>, <a href="http://nipy.org/nibabel/" target="_blank">NiBabel</a>, <a href="http://dcmstack.readthedocs.org/en/v0.6.1/" target="_blank">DcmStack</a>, etc.) . </p>
-
-          <h3 id="nimsdata">NIMSdata <a href="#nims">&#8613;</a></h3>
-            <p><a href="http://scitran.github.io/nimsdata">NIMSdata</a>, our custom-engineered, open-source library, takes raw data and performs various processing tasks. For example, raw DICOM data from GE or Siemens scanners are converted to a widely used, compressed, file format -- NIfTI. Quality Assurance metrics are also automatically computed and made available alongside raw data. We have also built upon visualization toolkits to make viewing data within the NIMS UI as simple as clicking a button.</p>
-
-            <p>NIMSdata is engineered to be modular -- researchers can design their own purpose-built computational modules that can plug-in to NIMSdata and perform special processing operations.</p>
-
-            <p>For more detailed information, have a look at the NIMSdata <a href="http://scitran.github.io/nimsdata">documentation.</a></p>
-
-          <h3 id="data_management">Data Management <a href="#nims">&#8613;</a></h3>
-            <p>Data management as well as user rights and permissions are all handled through a custom-engineered Web UI - built with HTML5 and AngularJS. The NIMS UI allows users to access their data from anywhere in the world and provides the interface through which they can browse, organize, download, search and share their data.</p>
-
-            <p>Users may also search for and request access to data at remote sites. Users can even create Virtual Projects, consisting of data across projects, labs, and even instuttions. Sharing and permissions are managed within the NIMS UI. Acess to the NIMS UI is managed via <a href="http://oauth.net" target="_blank">OAuth</a>.</p>
-
-          <h3 id="user">User <a href="#nims">&#8613;</a></h3>
-            <p>NIMS is user focused. At each stage of development our team was completely focused on what was important for everyday users. We wanted to develop a system that was as simple and easy to use as possible. </p>
-
-            <p>That's why we developed REAPER, which direcly communicates with the Instrument, relieving the burdon normally befalling the user to actually get their data into the system. By making that step automatic users can rest assured that every byte the instrument produces gets into the system. </p>
-
-            <p>We also developed our Automatic Processing pipeline with the user in mind. A very well known issue in neuroimaging is conversion of raw data to a standardized file format, adhering to accepted conventions. We take this step for the user and convert GE and Siemens raw DICOM files to NIfTI. Those NIfTI files are then stored in the database and appear alongside the raw data, allowing the user to download raw data, NIfTI data, or both. Not only does this make sure that file formats and conventions are consistently correct, but alleviates the computational and organizational burdon that users typically face. </p>
-
-            <p>Nowhere is our user-focused approach more evident than in the UI design of the NIMS front-end web application. The NIMS UI is the only point of contact to the entire system for most users. The prime objective of our UI development team is making a simple, yet incredibly powerful, interface that makes data management easy.</p>
-
-          <h3 id="inter_nims">InterNIMS <a href="#nims">&#8613;</a></h3>
-            <p>InterNIMS makes it possible for peer-discovery, cross-site database queries, and data sharing. While running, a NIMS site will brodcast its existence to InterNIMS, which will securely provide across-site access to resources.</p>
-
-          <h3 id="remote_site">Remote Sites <a href="#nims">&#8613;</a></h3>
-            <p>Remote sites running their own instance of NIMS can communicate with one another securely (via InterNIMS) allowing for researchers from any one site to search and share data with those at other sites around the world.</p>
-
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-
-        <table style="width:100%; border:none;">
-          <tr>
-          <td style="width:30%;"><h5 style="color:#eeeeee; border-bottom:-10px">ABOUT</h5></td>
-          <td style="width:40%; color:#eeeeee; border-bottom:10px; text-align:center"><h3><a href="#header_wrap">&#8613;</a></h3></td>
-          <td style="width:30%; text-align:right;"><h5 style="color:#eeeeee; border-bottom:10px">LICENSE</h5></td>
-          </tr>
-          <tr>
-            <td>
-              <a href="//scitran.stanford.edu/team">Team</a> &nbsp;| &nbsp;
-              <a href="//scitran.stanford.edu/contact">Contact</a> &nbsp;| &nbsp;
-              <a href="//scitran.stanford.edu">Scientific Transparency at Stanford</a> &nbsp;| &nbsp;
-              <a href="//cni.stanford.edu/nims">NIMS at CNI (Stanford)</a>
-            </td>
-            <td></td>
-            <td style="text-align:right;">
-              NIMS is open-source software, released under the <a href="//opensource.org/licenses/MIT">MIT license</a>.
-            </td>
-          </tr>
-         </table>
-
-      </footer>
-    </div>
-
-  </body>
+{% include analytics.html %}
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="site.js"></script>
 </html>
