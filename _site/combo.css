@@ -781,7 +781,7 @@ nav ul li:hover, nav ul li.active {
 
 /* ----- fork on github banner ----- */
 #forkongithub a {
-  color:#fff;
+  color:#ECECEC;
   text-decoration:none;
   font-family:arial,sans-serif;
   text-align:center;
@@ -921,5 +921,9 @@ table {
   }
 
   #intro {
-    background:url("img/data_bg.png");
+    background:url("img/brain_bg.png");
+  }
+
+  #footertable td{
+    padding-top:0px;
   }

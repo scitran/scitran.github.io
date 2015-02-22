@@ -1,4 +1,4 @@
-<table>
+<table id="footertable">
 	<tr>
 		<td width="33%"><a href="http://post.stanford.edu" style="text-decoration:none"><h5>PoST</h5></td>
 		<td width="33%"><a href="#intro" style="text-decoration:none"><h5>Scientific Transparency - SciTran</h5></a></td>
