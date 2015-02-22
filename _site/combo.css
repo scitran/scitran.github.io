@@ -690,7 +690,7 @@ nav ul li:hover, nav ul li.active {
   display:block;
   width:100%;
   min-height:300px;
-  padding:200px 0 140px;
+  padding:150px 0 140px;
   background:url(img/bgnoise.png);
   /* generated noise from noisetexturegenerator.com */
 }
@@ -719,13 +719,14 @@ nav ul li:hover, nav ul li.active {
   background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAF0lEQVQIHWP8//+/MQMaYELjg7kUCgIASm8DOqGzfp8AAAAASUVORK5CYII=);
 }
 
+/* width 250px height 250 px  left 50%*/
 .sectiondivider {
-  width:250px;
-  height:250px;
+  width:200px;
+  height:200px;
   padding:6px;
   position:absolute;
   top:-80px;
-  left:50%;
+  left:53%;
   margin-left:-135px;
 }
 
@@ -736,8 +737,9 @@ nav ul li:hover, nav ul li.active {
   margin-top: -20px;
 }
 
+/* font-size 130px */
 .sectiondivider .fa-stack {
-  font-size: 130px;
+  font-size: 104px;
   position: static;
   margin-top: -8px;
 }
