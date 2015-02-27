@@ -21,7 +21,7 @@ html { box-sizing: border-box; }
   {% capture fg %}{% if site.colors[node.color] %}{{ site.colors[node.color] }}{% else %}{{ node.color }}{% endif %}{% endcapture %}
   nav .p-{{id}} { border-color: {{ bg }}; }
   #{{id}} { background-color: {{ bg }} !important; color: {{ fg }}; }
-  #{{id}} a { color: {{ fg }}; }
+ /* #{{id}} a { color: {{ fg }}; } */
   #{{id}} .sectiondivider { color: {{ bg }}; }
 {% endfor %}
 
@@ -364,7 +364,7 @@ nav ul li:hover, nav ul li.active {
 	padding-top: 15px;
 	float: center;
 	}
-	
+
 td {
 	vertical-align:middle;
 	padding-left: 10px;
@@ -383,19 +383,19 @@ strongg {
   font-size: 1.2rem;
   color: #272727;
   }
-	
-	
+
+
 table {
 	margin-left: auto;
 	margin-right: auto;
 	width: 85%;
 	}
 
-  .bg-fork { 
-    background-color: rgba(0, 164, 224, 0) !important; 
+  .bg-fork {
+    background-color: rgba(0, 164, 224, 0) !important;
   }
 
-  img.round {   
+  img.round {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
