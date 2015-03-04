@@ -1,5 +1,5 @@
 ---
-title: "doc"
+title: "docs"
 bg:  gray
 color: white
 fa-icon: file-text-o
@@ -13,7 +13,7 @@ fa-icon: file-text-o
 <!-- bg: '#4D5357 -->
 
 <img class="bodyimage" src="../img/nims_diagram.png" width="90%">
-            
+
 <!--
 
 **Instrument**

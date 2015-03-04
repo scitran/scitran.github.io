@@ -1,10 +1,10 @@
 <table id="footertable">
 	<tr>
-		<td width="33%"><a href="/doc" style="text-decoration:none"><h5>Documentation</h5></td>
+		<td width="33%"><a href="/docs" style="text-decoration:none"><h5>Documentation</h5></td>
 		<td width="33%"><a href="#intro" style="text-decoration:none"><h5>Scientific Transparency</h5></a></td>
 		<td width="33%"><a href="//post.stanford.edu/contact" style="text-decoration:none"><h5>Contact</h5></td>
 	</tr>
-	
+
 </table>
 
 

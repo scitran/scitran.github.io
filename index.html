@@ -1,5 +1,6 @@
 ---
 ---
+
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 <head>
@@ -23,11 +24,11 @@
         <li class="p-{{id}}"><a href="#{{id}}">{{node.title}}</a></li>
       {% endfor %}
     </ul>
-    <div>
-      <a id="forkme_banner" href="https://github.com/scitran">View on GitHub</a>
-      </div>
-    </nav>
 
+    <div>
+      <a id="forkme_banner" href="https://github.com/scitran" target="_blank">View on GitHub</a>
+    </div>
+    </nav>
 
     {% for page in site.posts reversed %}
       {% capture id %}{{ page.id | remove:'/' | downcase }}{% endcapture %}
@@ -51,7 +52,6 @@
         </div>
       </div>
     {% endfor %}
-
 
     <div id="footer" class="section text-white">
       <div class="container">
