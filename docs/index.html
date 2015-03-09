@@ -31,31 +31,8 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h2 id="SDM">SDM Documentation</h2>
-          <p>SDM is a scientific data management system, originally designed for neuroimaging data. <a href="#diagram">Click each section of the diagram below</a> to learn more about SDM and access documentation. </p>
-            <img id="diagram" src="images/nims_diagram.png" alt="SDM" width="960" border="0" usemap="#Map"/>
-            <map name="Map" id="Map">
-
-              <area shape="rect" coords="207,36,410,123" href="#data_management" title="Data are managed through a web interface engineered in AngularJS and HTML5."/>
-
-              <area shape="rect" coords="396,429,632,523" href="#automated_processor" alt="Automatic Processor" title="Automatically processes data from the database and makes it available for download through the web UI." />
-
-              <area shape="rect" coords="529,24,629,158" href="#user" alt="User" title="Users access data via secure (https) connections to the SDM web UI." />
-
-              <area shape="rect" coords="29,28,142,144" href="#instrument" alt="Instrument" title="The instrument connects direcly to the reaper. Every byte is captured automatically." />
-
-              <area shape="rect" coords="37,428,169,521" href="#reaper" alt="Reaper" title="The REAPER connects directy, via a secure connection, to the instrument. No user interaction is required to get data in and no byte is lost." />
-
-              <area shape="rect" coords="161,211,501,359" href="#restful_api" alt="RESTFul API Filesystem and Database" title="SDM uses a RESTful API and is built using ZFS for redundant storage and MongoDB with dynamic schemas."/>
-
-              <area shape="rect" coords="758,228,950,322" href="#inter_SDM" alt="InterSDM" title="InterSDM allows sites to communicate with one another securely, permitting remote sites to search, discover and share data with one another." />
-
-              <area shape="rect" coords="697,9,924,201" href="#remote_site" alt="Remote Sites" title="Remote sites running their own instance of SDM can communicate with one another securely, allowing researchers from any site to search and share with those at other sites around the world."/>
-
-              <area shape="rect" coords="698,349,925,541" href="#remote_site" alt="Remote Sites" title="Remote sites running their own instance of SDM can communicate with one another securely, allowing researchers from any site to search and share with those at other sites around the world." />
-
-              <area shape="rect" coords="219,441,346,509" href="#SDMdata" alt="SDM Data" title="SDM Data"/>
-
-            </map>
+          <p>SDM is a scientific data management system, originally designed for neuroimaging data. The diagram below illustrates the differnt aspects of SDM. Scroll down for more information. </p>
+            <img id="diagram" src="images/scitran_diagram.svg" alt="SDM" width="960" border="0"/>
 
           <h3 id="instrument">Instrument <a href="#SDM">&#8613;</a></h3>
             <p>The instrument (in this diagram represented by an MRI scanner) transmits data directly and securely into the SDM pipeline via the Reaper. The transfer takes place through a private network connection. Other instruments, which output a standardized file type (e.g., DICOM) can be used as the source for data coming into the pipeline. </p>
