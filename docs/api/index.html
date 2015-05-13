@@ -42,12 +42,12 @@
           <li><a href="#ep_sites">/sites</a></li>
           <li><a href="#ep_groups">/groups</a></li>
           <li><a href="#ep_project_g">/projects/groups</a></li>
-          <li><a href="#ep_projects_gid">/projects/?group=&lt;GROUP_ID></a></li>
-          <li><a href="#ep_projects_pid">/projects/&lt;PROJECT_ID> </a></li>
-          <li><a href="#ep_projects_pid_s">/projects/&lt;PROJECT_ID>/sessions</a></li>
-          <li><a href="#ep_sessions_sid">/sessions/&lt;SESSION_ID </a></li>
-          <li><a href="#ep_sessions_sid_a">/sessions/&lt;SESSION_ID>/acquisitions </a></li>
-          <li><a href="#ep_acquisitions_aid">/acquisitions/&lt;ACQUISITION_ID</a></li>
+          <li><a href="#ep_projects_gid">/projects?group=&lt;GROUP_ID&gt;</a></li>
+          <li><a href="#ep_projects_pid">/projects/&lt;PROJECT_ID&gt; </a></li>
+          <li><a href="#ep_projects_pid_s">/projects/&lt;PROJECT_ID&gt;/sessions</a></li>
+          <li><a href="#ep_sessions_sid">/sessions/&lt;SESSION_ID&gt;</a></li>
+          <li><a href="#ep_sessions_sid_a">/sessions/&lt;SESSION_ID&gt;/acquisitions </a></li>
+          <li><a href="#ep_acquisitions_aid">/acquisitions/&lt;ACQUISITION_ID&gt;</a></li>
         </small>
 
         </ul>
@@ -60,22 +60,22 @@
           <p>Below is the documentation for the SciTran RESTful API</p>
 
           <h3 id="authentication">Authentication</h3>
-            <p>In order to submit authenticated requests to the API you must first obtain an OAuth token from an OAuth provider and attach it to all subsequent API requests by setting the <code>Authorization</code> HTTP header to value of the token.
+          <p>In order to submit authenticated requests to the API, one must first obtain an OAuth token from an OAuth provider and attach it to all subsequent API requests by setting the <code>Authorization</code> HTTP header to the value of the token. The API will either answer the request or, if the token is invalid, will issue a <code>401 "invalid oauth2 token"</code> response.
 
           <h3 id="initialization">Initialization Flow </h3>
             <p>The first call to the API should be <code>GET /users/self</code> to verify that authentication was successful and that the user exists in system.</p>
 
-            <p>Subsequent, but optional calls are:
+            <p>A subsequent data retrieval flow might include the following requests:
             <ul>
             <li><code>GET /sites</code> returns the list of registered SciTran instances.</li>
             <li><code>GET /groups</code> returns the list of groups that the user is a member of.</li>
             <li><code>GET /projects/groups</code> returns the list of groups that are owners of projects that the user has access to. </li>
-            <li><code>GET /projects/?group=&lt;GROUP_ID></code> returns the list of projects that a user has access to, optionally restricted by group ID. </li>
-            <li><code>GET /projects/&lt;PROJECT_ID></code> returns the complete metadata for a given project.</li>
-            <li><code>GET /projects/&lt;PROJECT_ID>/sessions</code> returns the list of sessions for a given project.</li>
-            <li><code>GET /sessions/&lt;SESSION_ID></code> returns the complete metadata for a given session.</li>
-            <li><code>GET /sessions/&lt;SESSION_ID>/acquisitions</code> returns the list of acquisitions for a given sesssion.</li>
-            <li><code>GET /acquisitions/&lt;ACQUISITION_ID></code> returns the complete metadata for a given acquisition.</li>
+            <li><code>GET /projects?group=&lt;GROUP_ID&gt;</code> returns the list of projects that a user has access to, optionally restricted by group ID. </li>
+            <li><code>GET /projects/&lt;PROJECT_ID&gt;</code> returns the complete metadata for a given project.</li>
+            <li><code>GET /projects/&lt;PROJECT_ID&gt;/sessions</code> returns the list of sessions for a given project.</li>
+            <li><code>GET /sessions/&lt;SESSION_ID&gt;</code> returns the complete metadata for a given session.</li>
+            <li><code>GET /sessions/&lt;SESSION_ID&gt;/acquisitions</code> returns the list of acquisitions for a given sesssion.</li>
+            <li><code>GET /acquisitions/&lt;ACQUISITION_ID&gt;</code> returns the complete metadata for a given acquisition.</li>
             </ul>
 
             <p>
@@ -107,7 +107,7 @@
                 <h5>DELETE</h5><p></p>
               </div>
 
-            <h4 id="ep_projects_gid">/projects/?group=&lt;GROUP_ID></h4>
+            <h4 id="ep_projects_gid">/projects?group=&lt;GROUP_ID&gt;</h4>
               <div id="sec_indent">
                 <h5>GET</h5>
                 <h5>PUT</h5>
@@ -115,7 +115,7 @@
                 <h5>DELETE</h5><p></p>
               </div>
 
-            <h4 id="ep_projects_pid">/projects/&lt;PROJECT_ID></h4>
+            <h4 id="ep_projects_pid">/projects/&lt;PROJECT_ID&gt;</h4>
               <div id="sec_indent">
                 <h5>GET</h5>
                 <h5>PUT</h5>
@@ -123,7 +123,7 @@
                 <h5>DELETE</h5><p></p>
               </div>
 
-            <h4 id="ep_projects_pid_s">/projects/&lt;PROJECT_ID>/sessions</h4>
+            <h4 id="ep_projects_pid_s">/projects/&lt;PROJECT_ID&gt;/sessions</h4>
               <div id="sec_indent">
                 <h5>GET</h5>
                 <h5>PUT</h5>
@@ -131,7 +131,7 @@
                 <h5>DELETE</h5><p></p>
               </div>
 
-            <h4 id="ep_sessions_sid">/sessions/&lt;SESSION_ID></h4>
+            <h4 id="ep_sessions_sid">/sessions/&lt;SESSION_ID&gt;</h4>
               <div id="sec_indent">
                 <h5>GET</h5>
                 <h5>PUT</h5>
@@ -139,7 +139,7 @@
                 <h5>DELETE</h5><p></p>
               </div>
 
-            <h4 id="ep_sessions_sid_a">/sessions/&lt;SESSION_ID>/acquisitions</h4>
+            <h4 id="ep_sessions_sid_a">/sessions/&lt;SESSION_ID&gt;/acquisitions</h4>
               <div id="sec_indent">
                 <h5>GET</h5>
                 <h5>PUT</h5>
@@ -147,7 +147,7 @@
                 <h5>DELETE</h5><p></p>
               </div>
 
-            <h4 id="ep_acquisitions_aid">/acquisitions/&lt;ACQUISITION_ID</h4>
+            <h4 id="ep_acquisitions_aid">/acquisitions/&lt;ACQUISITION_ID&gt;</h4>
               <div id="sec_indent">
                 <h5>GET</h5>
                 <h5>PUT</h5>
