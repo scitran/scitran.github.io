@@ -364,18 +364,32 @@ Full-Width Styles
 #main_content_wrap {
   background: #f2f2f2;
   border-top: 1px solid #111;
-  border-bottom: 1px solid #111;
 }
 
 #main_content {
   padding-top: 40px;
+  padding-bottom: 200px;
 }
 
 #footer_wrap {
   background: #212121;
   color: #eee;
+  bottom: 0;
 }
 
+#footer_wrap .inner {
+  padding-top: 0px;
+  padding-bottom: 10px;
+}
+
+#footer_wrap table {
+  margin-bottom: 0px;
+}
+
+#footer_wrap ul {
+  padding-left: 0px;
+  list-style-type: none;
+}
 
 
 /*******************************************************************************
@@ -433,28 +447,21 @@ Small Device Styles
 }
 
 /*******************************************************************************
-DOCS STYLE
+SIDEBAR STYLE
 *******************************************************************************/
-body {
-  font-size: 14px;
-  line-height: 1.5;
-  font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
-  background: #f4f4f4 ;
-}
-.interface {
-  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif !important;
-}
+
 div#sidebar {
   position: fixed;
   z-index: 10;
   top: 0; left: 0; bottom: 0;
-  width: 222px;
+  width: 260px;
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
-  padding: 15px 0 30px 20px;
+  padding: 0px 0px 0px 0px;
   border-right: 1px solid #bbb;
   box-shadow: 0 0 0px #ccc; -webkit-box-shadow: 0 0 0px #ccc; -moz-box-shadow: 0 0 0px #ccc;
+  background: rgb(249, 249, 249);
 }
 a.toc_title, a.toc_title:visited {
   display: block;
@@ -462,20 +469,20 @@ a.toc_title, a.toc_title:visited {
   font-weight: bold;
   margin-top: 15px;
 }
-  a.toc_title:hover {
-    text-decoration: underline;
-  }
-  #sidebar .version {
-    font-size: 10px;
-    font-weight: normal;
-  }
+a.toc_title:hover {
+  text-decoration: underline;
+}
+#sidebar .version {
+  font-size: 10px;
+  font-weight: normal;
+}
 ul.toc_section {
-  font-size: 11px;
-  line-height: 14px;
-  margin: 5px 0 0 0;
-  padding-left: 0px;
-  list-style-type: none;
-  font-family: Lucida Grande;
+font-size: 11px;
+line-height: 14px;
+margin: 5px 0 0 0;
+padding-left: 0px;
+list-style-type: none;
+font-family: Lucida Grande;
 }
 .toc_section li {
   cursor: pointer;
@@ -490,20 +497,38 @@ ul.toc_section {
 }
 div.container {
   position: relative;
-  margin: 0px 0 0px 242px;
+  margin: 0px 0 0px 261px;
 }
 div#sec_indent {
   margin-left: 20px;
 }
 
 small {
-  font-size: .8rem;
+  font-size: .88rem;
 }
 
 #sidebar ul {
-  padding-left: 5px;
+  padding-left: 7px;
+  list-style-type: circle;
 }
 
 #sidebar p {
   margin-bottom: 0px;
 }
+
+#sidebar #header_wrap {
+    height: 37px;
+}
+
+
+#sidebar_content {
+  padding-left: 12px;
+  padding-right: 5px;
+  padding-top: 10px
+}
+
+#sidebar #header_wrap .inner {
+    color: white;
+    padding-top: 8px;
+}
+

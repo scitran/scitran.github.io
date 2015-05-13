@@ -12,15 +12,10 @@
     <script src="../../tech/javascripts/smooth-scroll.js"></script>
 
     <title>API Documentation</title>
-
-<style>
-
-
-</style>
   </head>
 
-  <body>
-<div id="container" class="container">
+<body>
+  <div id="container" class="container">
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
@@ -32,27 +27,38 @@
         </header>
     </div>
 
+    <!-- SIDEBAR BEGIN -->
     <div id="sidebar">
-      <strong>MENU</strong></br>
-      <p><a href="#top"><strong>API DOC</strong></top></p>
-      <p><a href="#authentication">Authentication</a></p>
-      <p><a href=#endpoints>Endpoints</a>
-        <ul>
-        <small>
-          <li><a href="#ep_sites">/sites</a></li>
-          <li><a href="#ep_groups">/groups</a></li>
-          <li><a href="#ep_project_g">/projects/groups</a></li>
-          <li><a href="#ep_projects_gid">/projects?group=&lt;GROUP_ID&gt;</a></li>
-          <li><a href="#ep_projects_pid">/projects/&lt;PROJECT_ID&gt; </a></li>
-          <li><a href="#ep_projects_pid_s">/projects/&lt;PROJECT_ID&gt;/sessions</a></li>
-          <li><a href="#ep_sessions_sid">/sessions/&lt;SESSION_ID&gt;</a></li>
-          <li><a href="#ep_sessions_sid_a">/sessions/&lt;SESSION_ID&gt;/acquisitions </a></li>
-          <li><a href="#ep_acquisitions_aid">/acquisitions/&lt;ACQUISITION_ID&gt;</a></li>
-        </small>
+      <div id="header_wrap" class="outer">
+        <div class="inner">
+          <strong>Documentation: API</strong>
+        </div>
+      </div>
+      <div id="sidebar_content">
+        <p><a href="#">API</a></p>
+        <p><a href="#authentication">Authentication</a></p>
+        <p><a href="#initialization">Initialization Flow</a></p>
+        <p><a href="#endpoints">Endpoints</a>
+          <ul>
+            <small>
+              <li><a href="#ep_sites">/sites</a></li>
+              <li><a href="#ep_groups">/groups</a></li>
+              <li><a href="#ep_project_g">/projects/groups</a></li>
+              <li><a href="#ep_projects_gid">/projects?group=&lt;GROUP_ID&gt;</a></li>
+              <li><a href="#ep_projects_pid">/projects/&lt;PROJECT_ID&gt; </a></li>
+              <li><a href="#ep_projects_pid_s">/projects/&lt;PROJECT_ID&gt;/sessions</a></li>
+              <li><a href="#ep_sessions_sid">/sessions/&lt;SESSION_ID&gt;</a></li>
+              <li><a href="#ep_sessions_sid_a">/sessions/&lt;SESSION_ID&gt;/acquisitions </a></li>
+              <li><a href="#ep_acquisitions_aid">/acquisitions/&lt;ACQUISITION_ID&gt;</a></li>
+            </small>
+          </ul>
+        </br>  
+        <p><small><a href="/docs"><span style="color:black">&#8656; SciTran Documentation</span></a></small></p>
+      </div>
 
-        </ul>
       </p>
     </div>
+
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
@@ -81,7 +87,7 @@
             <p>
 
           <h3 id="endpoints">Endpoints</a></h3>
-          <p> Endpoints, then the methods for each:</p>
+          <p> API endpoints and methods for each.</p>
 
             <h4 id="ep_sites">/sites</h4>
               <div id="sec_indent">
@@ -175,18 +181,23 @@
           <tr>
           <td style="width:30%;"><h5 style="color:#eeeeee; border-bottom:-10px">ABOUT</h5></td>
           <td style="width:40%; color:#eeeeee; border-bottom:10px; text-align:center"><h3><a href="#header_wrap">&#8613;</a></h3></td>
-          <td style="width:30%; text-align:right;"><h5 style="color:#eeeeee; border-bottom:10px">LICENSE</h5></td>
+          <td style="width:30%; text-align:right;"><h5 style="color:#eeeeee; border-bottom:10px">PAGES</h5></td>
           </tr>
           <tr>
             <td>
-              <a href="../#team">Team</a> &nbsp;| &nbsp;
-              <a href="//post.stanford.edu/contact">Contact</a> &nbsp;| &nbsp;
-              <a href="//post.stanford.edu">Project on Scientific Transparency (Stanford)</a> &nbsp;| &nbsp;
-              <a href="//cni.stanford.edu/nims">SDM at CNI (Stanford)</a>
-            </td>
-            <td></td>
+              <ul>
+                <li><a href="../#team">Team</a> </li>
+                <li><a href="//post.stanford.edu/contact">Contact</a></li>
+                <li><a href="//post.stanford.edu">Project on Scientific Transparency</a> </li>
+              </ul>
+           </td>
+            <td style="width:30%; text-align:center; "> <small><em>SDM is open-source software, released under the MIT license.</em></small> </td>
             <td style="text-align:right;">
-              SDM is open-source software, released under the <a href="//opensource.org/licenses/MIT">MIT license</a>.
+              <ul>
+                <li><a href="/"> SciTran Home</a></li>
+                <li><a href="/tech"> Technology</a></li>
+                <li><a href="/docs"> Documentation</a></li>
+              </ul>
             </td>
           </tr>
          </table>
