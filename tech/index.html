@@ -15,7 +15,7 @@
   </head>
 
   <body>
-
+  <div id="container" class="container">
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
@@ -27,12 +27,38 @@
         </header>
     </div>
 
+
+    <!-- SIDEBAR BEGIN -->
+    <div id="sidebar">
+      <div id="header_wrap" class="outer">
+        <div class="inner">
+          <strong>Technology</strong>
+        </div>
+      </div>
+      <div id="sidebar_content">
+
+        <!-- API -->
+        <p><a href="#">SDM Technology</a></p>
+        <ul>
+          <li> <a href="#reaper">Reaper </a></li>
+          <li> <a href="#restful_api">RESTful API</a></li>
+          <li> <a href="#automated_processor">Automated Processor </a></li>
+          <li> <a href="#SDMdata">SDMdata </a></li>
+          <li> <a href="#data_management">Data Management </a></li>
+          <li> <a href="#user">User </a></li>
+          <li> <a href="#inter_SDM">SciTran Central </a></li>
+          <li> <a href="#remote_site">Remote Sites </a></li>
+        </ul>
+      </div>
+    </div>
+
+
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h2 id="SDM">SDM Technology</h2>
           <p>SDM is a scientific data management system, originally designed for neuroimaging data. The diagram below illustrates the different aspects of SDM. Scroll down for more information. </p>
-            <img id="diagram" src="images/scitran_diagram.svg" alt="SDM" width="960" border="0"/>
+            <img id="diagram" src="images/scitran_diagram.svg" alt="SDM" width="99%" border="0"/>
 
           <h3 id="instrument">Instrument <a href="#SDM">&#8613;</a></h3>
             <p>The instrument (in this diagram represented by an MRI scanner) transmits data directly and securely into the SDM pipeline via the Reaper. The transfer takes place through a private network connection. Other instruments, which output a standardized file type (e.g., DICOM) can be used as the source for data coming into the pipeline. </p>

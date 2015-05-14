@@ -677,6 +677,11 @@ nav ul li:hover, nav ul li.active {
 }
 #footer .container p { font-size:13px; margin:0; }
 
+#footer h5 {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
 .subtlecircle {
   text-align:center;
   z-index:3;
