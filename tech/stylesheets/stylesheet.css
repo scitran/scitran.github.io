@@ -262,6 +262,98 @@ form {
   padding: 20px;
 }
 
+
+/*******************************************************************************
+SIDEBAR STYLE
+*******************************************************************************/
+
+div#sidebar {
+  position: fixed;
+  z-index: 10;
+  top: 0; right: 0; bottom: 0;
+  width: 280px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: 0px 0px 0px 0px;
+  border-left: 1px solid #eee;
+  box-shadow: 0 0 0px #ccc; -webkit-box-shadow: 0 0 0px #ccc; -moz-box-shadow: 0 0 0px #ccc;
+  background: #f9f9f9;
+}
+a.toc_title, a.toc_title:visited {
+  display: block;
+  color: black;
+  font-weight: bold;
+  margin-top: 15px;
+}
+a.toc_title:hover {
+  text-decoration: underline;
+}
+#sidebar .version {
+  font-size: 10px;
+  font-weight: normal;
+}
+ul.toc_section {
+font-size: 11px;
+line-height: 14px;
+margin: 5px 0 0 0;
+padding-left: 0px;
+list-style-type: none;
+font-family: Lucida Grande;
+}
+.toc_section li {
+  cursor: pointer;
+  margin: 0 0 3px 0;
+}
+.toc_section li a {
+  text-decoration: none;
+  color: black;
+}
+.toc_section li a:hover {
+  text-decoration: underline;
+}
+div.container {
+  position: relative;
+  margin: 0px 280px 0px 0px;
+}
+div#sec_indent {
+  margin-left: 20px;
+}
+
+small {
+  font-size: .88rem;
+}
+
+#sidebar ul {
+  padding-left: 7px;
+  list-style-type: circle;
+}
+
+#sidebar p {
+  margin-bottom: 0px;
+}
+
+#sidebar #header_wrap {
+    height: 37px;
+}
+
+#sidebar_content {
+  padding-left: 15px;
+  padding-right: 5px;
+  padding-top: 10px;
+  color: #0090ff;
+}
+
+#sidebar_content a {
+  color: black;
+}
+#sidebar #header_wrap .inner {
+    color: white;
+    padding-top: 8px;
+}
+
+
+
 /*******************************************************************************
 Full-Width Styles
 *******************************************************************************/
@@ -397,22 +489,33 @@ Full-Width Styles
 Small Device Styles
 *******************************************************************************/
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 700px) {
   body {
-    font-size:14px;
+    font-size:15px;
   }
 
   #downloads {
     display: none;
   }
 
+  #sidebar {
+    display: none;
+  }
+  div#container {
+    margin: 0 0 0 0;
+  }
+
+  #forkme_banner {
+    display:none;
+  }
+
   .inner {
     min-width: 320px;
-    max-width: 480px;
+    max-width: 700px;
   }
 
   #project_title {
-  font-size: 32px;
+  font-size: 20px;
   }
 
   h1 {
@@ -432,7 +535,7 @@ Small Device Styles
   }
 
   h5 {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   h6 {
@@ -446,94 +549,4 @@ Small Device Styles
   }
 
 }
-
-/*******************************************************************************
-SIDEBAR STYLE
-*******************************************************************************/
-
-div#sidebar {
-  position: fixed;
-  z-index: 10;
-  top: 0; right: 0; bottom: 0;
-  width: 280px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
-  padding: 0px 0px 0px 0px;
-  border-left: 1px solid #eee;
-  box-shadow: 0 0 0px #ccc; -webkit-box-shadow: 0 0 0px #ccc; -moz-box-shadow: 0 0 0px #ccc;
-  background: #f9f9f9;
-}
-a.toc_title, a.toc_title:visited {
-  display: block;
-  color: black;
-  font-weight: bold;
-  margin-top: 15px;
-}
-a.toc_title:hover {
-  text-decoration: underline;
-}
-#sidebar .version {
-  font-size: 10px;
-  font-weight: normal;
-}
-ul.toc_section {
-font-size: 11px;
-line-height: 14px;
-margin: 5px 0 0 0;
-padding-left: 0px;
-list-style-type: none;
-font-family: Lucida Grande;
-}
-.toc_section li {
-  cursor: pointer;
-  margin: 0 0 3px 0;
-}
-.toc_section li a {
-  text-decoration: none;
-  color: black;
-}
-.toc_section li a:hover {
-  text-decoration: underline;
-}
-div.container {
-  position: relative;
-  margin: 0px 280px 0px 0px;
-}
-div#sec_indent {
-  margin-left: 20px;
-}
-
-small {
-  font-size: .88rem;
-}
-
-#sidebar ul {
-  padding-left: 7px;
-  list-style-type: circle;
-}
-
-#sidebar p {
-  margin-bottom: 0px;
-}
-
-#sidebar #header_wrap {
-    height: 37px;
-}
-
-#sidebar_content {
-  padding-left: 15px;
-  padding-right: 5px;
-  padding-top: 10px;
-  color: #0090ff;
-}
-
-#sidebar_content a {
-  color: black;
-}
-#sidebar #header_wrap .inner {
-    color: white;
-    padding-top: 8px;
-}
-
 
