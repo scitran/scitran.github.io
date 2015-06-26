@@ -41,6 +41,13 @@
             <li><a href="#ep_acquisitions_aid">/acquisitions/&lt;ACQUISITION_ID&gt;</a></li>
           </small>
         </ul>
+      </p>
+      <p><a href="#examples">Examples</a>
+        <ul>
+          <small>
+            <li><a href="#ex_upload_download_delete">Uploads, Downloads, and Deletes</a></li>
+          </small>
+        </ul>
       </p> 
     </div>
   </div>
@@ -186,7 +193,32 @@
                 <h5>DELETE</h5><p></p>
               </div>
             -->
-
+          <h3 id="examples">Examples</h3>
+            <p>
+              <h4 id="ex_upload_download_delete">File Uploads, Downloads, and Deletes</h4>
+              Below are some examples of how to do file uploads, downloads, and deletes using the latest API calls. The calls should work at all container levels:
+                
+                <h5><code>PUT /api/&lt;level&gt;/&lt;id&gt;/file/&lt;filename&gt;?flavor=[data,attachment]</code></h5>
+                <h5><code>GET /api/&lt;level&gt;/&lt;id&gt;/file/&lt;filename&gt;?view=[true,false]</code></h5>
+                <h5><code>POST /api/&lt;level&gt;/&lt;id&gt;/file/&lt;filename&gt;</code></h5>
+                <h5><code>DELETE /api/&lt;level&gt;/&lt;id&gt;/file/&lt;filename&gt;</code></h5>
+                
+                <strong>Note:</strong>
+                  <ul>
+                    <li><code>PUT</code> calls must be authenticated and expect the data in the body file.</li>
+                    <li><code>GET</code> calls can either be authenticated or use a download ticket obtained from a previous POST call. They return the file with its proper mime type (for viewing) if view=true, else as content-disposition attachment (for download).</li>
+                    <li><code>POST</code> calls must be authenticated and return a download ticket.</li>
+                    <li><code>DELETE</code> calls must be authenticated.</li>
+                  </ul>
+                
+                <p><strong>Example PUT using Curl</strong>
+                  <pre>curl -X PUT --data-binary @image.png \
+-H "Content-MD5:a6dfc6ebe3f4bad298867a73947dc872" \
+-H "Content-Type:application/octet-stream" \
+"https://****.stanford.edu/api/acquisitions/555ba7ede7424b2c81dc24df/file/image.png?user=****@stanford.edu&flavor=attachment”</pre>
+                </p>
+                
+            </p>            
       </section>
     </div>
 
