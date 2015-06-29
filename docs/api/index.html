@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../../tech/stylesheets/stylesheet.css">
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="../../tech/javascripts/smooth-scroll.js"></script>
+    <!--script src="../../tech/javascripts/smooth-scroll.js"></script-->
 
     <title>API Documentation</title>
   </head>
@@ -48,7 +48,7 @@
             <li><a href="#ex_upload_download_delete">Uploads, Downloads, and Deletes</a></li>
           </small>
         </ul>
-      </p> 
+      </p>
     </div>
   </div>
 
@@ -197,12 +197,12 @@
             <p>
               <h4 id="ex_upload_download_delete">File Uploads, Downloads, and Deletes</h4>
               Below are some examples of how to do file uploads, downloads, and deletes using the latest API calls. The calls should work at all container levels:
-                
+
                 <h5><code>PUT /api/&lt;level&gt;/&lt;id&gt;/file/&lt;filename&gt;?flavor=[data,attachment]</code></h5>
                 <h5><code>GET /api/&lt;level&gt;/&lt;id&gt;/file/&lt;filename&gt;?view=[true,false]</code></h5>
                 <h5><code>POST /api/&lt;level&gt;/&lt;id&gt;/file/&lt;filename&gt;</code></h5>
                 <h5><code>DELETE /api/&lt;level&gt;/&lt;id&gt;/file/&lt;filename&gt;</code></h5>
-                
+
                 <strong>Note:</strong>
                   <ul>
                     <li><code>PUT</code> calls must be authenticated and expect the data in the body file.</li>
@@ -210,16 +210,25 @@
                     <li><code>POST</code> calls must be authenticated and return a download ticket.</li>
                     <li><code>DELETE</code> calls must be authenticated.</li>
                   </ul>
-                
+
                 <p><strong>Example PUT using Curl</strong>
                   <pre>curl -X PUT --data-binary @image.png \
 -H "Content-MD5:a6dfc6ebe3f4bad298867a73947dc872" \
 -H "Content-Type:application/octet-stream" \
 "https://****.stanford.edu/api/acquisitions/555ba7ede7424b2c81dc24df/file/image.png?user=****@stanford.edu&flavor=attachment”</pre>
                 </p>
-                
-            </p>            
+
+                <strong>Adding Metadata and Tags</strong><br>
+                The following example shows how to add metadata and tags to uploaded files. A 'tags' array and a 'metadata' document can be specified as URL encoded query parameters of JSON strings.</br>&nbsp;
+
+              <pre>tags: ["foo", "bar"] ==&gt; tags=%5B%22foo%22%2C+%22bar%22%5D
+            </pre>
+            <br>
+            <pre>metadata: {foo: 1, bar: {baz: "two"}} ==&gt; metadata=%7B%22foo%22%3A+1%2C+%22bar%22%3A+%7B%22baz%22%3A+%22two%22%7D%7D
+            </pre>
+
       </section>
+            </p>
     </div>
 
     <!-- FOOTER  -->
