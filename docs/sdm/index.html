@@ -15,7 +15,7 @@
   </head>
 
 <body>
-  
+
   <!-- SIDEBAR BEGIN -->
   <div id="sidebar">
     <div id="header_wrap" class="outer">
@@ -25,18 +25,17 @@
     </div>
     <div id="sidebar_content">
       <p><a href="#">SDM</a></p>
-      <p>- <em>Coming Soon!</em></p>
-       <!--
         <ul>
           <small>
-            <li><a href="#ep_sites">/sites</a></li>
+            <li><a href="#groups">Groups</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#roles">Roles</a></li>
           </small>
         </ul>
-      -->
-      </br>  
+      </br>
     </div>
   </div>
-
 
   <div id="container" class="container">
     <!-- HEADER -->
@@ -55,11 +54,31 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h2 id="top">SDM Documentation</h2>
-          <p>Coming soon!</p>
-          <div style="padding-bottom:400px"> </div>
+          <h3 id="groups">Groups</h3>
+          <p>Groups are a relatively loose concept in scitran. Even though projects are owned by groups, group membership itself does not grant any permissions on projects owned by that group. New projects, especially those created by the reaper, inherit their initial permissions from the respective group, but those permissions can be arbitrarily changed later. The SDM UI presents projects grouped by group, but does not take group membership into account for data presentation. Other presentation options might emphasize projects that are owned by groups that the user is a member of. For admin activities, such as creating a new project within a group or modifying group roles, membership is of course relevant. </p>
+          <p>Only the site admin (superuser) can create new groups.</p>
+          <p>Users do not need to be members of any groups. For our original use-case, which is to collect and present all data generated at an imaging research center, groups are generally a representation of the research labs using the center. Membership itself is managed within each lab.</p>
+
+
+          <h3 id="projects">Projects</h3>
+          <p></p>
+
+          <h3 id="collections">Collections</h3>
+          <p></p>
+
+          <h3 id="roles">Roles</h3>
+          <p>
+          <ul>
+            <li><h4>Users</h4> </li>
+            <li><h4>Project Admins</h4></li>
+            <li><h4>Group Admins</h4></li>
+            <li><h4>Site Admins (Superusers)</h4></li>
+          </ul>
+          </p>
+
+
+        <div style="padding-bottom:400px"> </div>
 <!--
-          <h3 id="authentication">Authentication</h3>
-          <p>In order to submit authenticated requests to the API, one must first obtain an OAuth token from an OAuth provider and attach it to all subsequent API requests by setting the <code>Authorization</code> HTTP header to the value of the token. The API will either answer the request or, if the token is invalid, will issue a <code>401 "invalid oauth2 token"</code> response.
 
           <h3 id="initialization">Initialization Flow </h3>
             <p>The first call to the API should be <code>GET /users/self</code> to verify that authentication was successful and that the user exists in system.</p>

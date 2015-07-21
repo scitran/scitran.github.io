@@ -278,9 +278,7 @@ div#sidebar {
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   padding: 0px 0px 0px 0px;
-  border-right: 1px solid #eee;
   box-shadow: 0 0 0px #ccc; -webkit-box-shadow: 0 0 0px #ccc; -moz-box-shadow: 0 0 0px #ccc;
-  /*background: #f9f9f9;*/
 }
 a.toc_title, a.toc_title:visited {
   display: block;
@@ -336,7 +334,7 @@ small {
 }
 
 #sidebar #header_wrap {
-    height: 37px;
+    height: 36px;
 }
 
 #sidebar_content {
@@ -459,7 +457,7 @@ Full-Width Styles
 #main_content_wrap {
   /*background: #f2f2f2;*/
   background: white;
-  border-top: 1px solid #111;
+  border-left: 1px solid #eee;
 }
 
 #main_content {
