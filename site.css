@@ -52,7 +52,7 @@
 ================================================== */
 	body {
 		background: #fff;
-		font: 14px/21px "Raleway" "HelveticaNeue-Light", Arial, sans-serif;
+		font: 14px/21px "Raleway", "HelveticaNeue-Light", Arial, sans-serif;
 		color: #444;
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 		-webkit-text-size-adjust: 100%;
@@ -475,43 +475,25 @@ html { box-sizing: border-box; }
 
 
 
-  nav .p-funding { border-color: #FFFFFF; }
-  #funding { background-color: #FFFFFF !important; color: #111111; }
- /* #funding a { color: #111111; } */
-  #funding .sectiondivider { color: #FFFFFF; }
+  nav .p-intro { border-color: #4d4d4d; }
+  #intro { background-color: #4d4d4d !important; color: #f8f8f8; }
+ /* #intro a { color: #f8f8f8; } */
+  #intro .sectiondivider { color: #4d4d4d; }
 
-
-
+  nav .p-components { border-color: #808080; }
+  #components { background-color: #808080 !important; color: #f8f8f8; }
+ /* #components a { color: #f8f8f8; } */
+  #components .sectiondivider { color: #808080; }
 
   nav .p-team { border-color: #CDCDCD; }
   #team { background-color: #CDCDCD !important; color: #111111; }
  /* #team a { color: #111111; } */
   #team .sectiondivider { color: #CDCDCD; }
 
-
-
-
-  nav .p-technology { border-color: #9B9B9B; }
-  #technology { background-color: #9B9B9B !important; color: #111111; }
- /* #technology a { color: #111111; } */
-  #technology .sectiondivider { color: #9B9B9B; }
-
-
-
-
-  nav .p-features { border-color: #696969; }
-  #features { background-color: #696969 !important; color: #f8f8f8; }
- /* #features a { color: #f8f8f8; } */
-  #features .sectiondivider { color: #696969; }
-
-
-
-
-  nav .p-intro { border-color: #373737; }
-  #intro { background-color: #373737 !important; color: #f8f8f8; }
- /* #intro a { color: #f8f8f8; } */
-  #intro .sectiondivider { color: #373737; }
-
+  nav .p-funding { border-color: #FFFFFF; }
+  #funding { background-color: #FFFFFF !important; color: #111111; }
+ /* #funding a { color: #111111; } */
+  #funding .sectiondivider { color: #FFFFFF; }
 
 
 /* ----- code, syntax highlighting, etc ----- */
@@ -923,7 +905,7 @@ table {
       z-index: 10;
       padding: 8px 50px 10px 10px;
       color: #fff;
-      background: url('/images/blacktocat.png') #0090ff no-repeat 95% 50%;
+      background: url('images/blacktocat.png') #0090ff no-repeat 95% 50%;
       font-weight: 700;
       /*box-shadow: 0 0 10px rgba(0,0,0,.5);*/
       border-bottom-left-radius: 2px;

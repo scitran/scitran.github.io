@@ -1,46 +1,32 @@
-
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Scientific Transparency</title>
-    <meta name="keywords" content="SDM, nims, scitran">
-    <meta name="description" content="Scientific Transparency">
+  <meta name="keywords" content="scitran, scientific, transparency">
+  <meta name="description" content="Scientific Transparency">
   <link rel="stylesheet" href="site.css">
-  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="site.js"></script>
 </head>
+
 <body>
   <div id="main">
-
     <nav><ul>
-
-
         <li class="p-intro"><a href="#intro">SciTran</a></li>
-
-
-        <li class="p-features"><a href="#features">features</a></li>
-
-
-        <li class="p-technology"><a href="#technology">technology</a></li>
-
-
+        <li class="p-components"><a href="#components">components</a></li>
         <li class="p-team"><a href="#team">team</a></li>
-
-
         <li class="p-funding"><a href="#funding">funding</a></li>
-
     </ul>
-
     <div>
       <a id="forkme_banner" href="https://github.com/scitran" target="_blank">View on GitHub</a>
     </div>
     </nav>
-
-
 
       <div id="intro" class="section p-intro">
 
@@ -49,120 +35,67 @@
 
 <h3 class="text-orange" id="saving-science----starting-with-neuroscience">Saving Science – Starting with Neuroscience</h3>
 
-<p>Scientific Transparency (SciTran) is a software project that has grown out of the <a href="http://post.stanford.edu" target="_blank">Project on Scientific Transparency</a> at <a href="http://stanford.edu" target="_blank">Stanford University</a>. At the heart of SciTran is a scientific data management system – SDM – designed to enable and foster reproducible research.</p>
+<p>SciTran is a software project that has grown out of the <a href="http://post.stanford.edu" target="_blank">Project on Scientific Transparency (PoST)</a> at <a href="http://stanford.edu" target="_blank">Stanford University</a>. At the heart of SciTran is a RESTful API, designed to enable and foster reproducible research through data management and processing.</p>
 
-<p>SciTran SDM delivers efficient and robust archiving, organization, and sharing of scientific data. We have developed the system around neuroimaging data, but our goal is to build a system that is flexible enough to accommodate all types of scientific data – from paper-and-pencil tests to genomics data. SDM will also allow for the sharing of data and computations between remote sites.</p>
+<p>The SciTran API delivers efficient and robust organization, archiving, and sharing of scientific data. We have developed an ecosystem system for neuroimaging data, but our goal is to build a system that is flexible enough to accommodate all types of scientific data – from paper-and-pencil tests to genomics.</p>
 
-<p>SciTran is open-source software, released under the MIT license. Our <a href="https://github.com/scitran" target="_blank">code</a> is hosted on GitHub. Feel free to try it out or to contribute.</p>
+<p>All SciTran components are open-source software, released under the MIT license, and <a href="https://github.com/scitran" target="_blank">hosted on GitHub</a>. Feel free to try it out or to contribute.</p>
 
-<p>Commercial support for SciTran SDM is available through our partners at <a href="http://flywheel.io" target="_blank"><img src="images/flywheel.png" width="150px" /></a> .</p>
+<p>Our friends at <a href="https://flywheel.io" target="_blank">Flywheel</a>, a substantial contributor to our effort, have built a complete data management and processing solution, including a modern web-based user interface, on top of the SciTran components. Flywheel offers commercial support for installation and maintenance of their system; such support is clearly beyond the scope of PoST.</p>
+
+<p><center><a href="https://flywheel.io" target="_blank"><img src="images/flywheel.png" width="150px"/></a></center></p>
+
+<p>The SciTran codebase continues to be developed and maintained by the PoST team at <a href="https://vistalab.stanford.edu" target="_blank">Stanford's Vista Lab</a>, in close collaboration with Flywheel. The PoST team has transitioned its main focus from developing SciTran core functionality to creating scientific applications that run within the SciTran framework, with a particular focus on reproducible methods in neuroscience research.</p>
+
+<p>The SciTran software has been adopted by the <a href="http://reproducibility.stanford.edu" target="_blank">Stanford Center for Reproducible Neuroscience</a>, led by Russ Poldrack and Chris Gorgolewski. The center has supported members of the PoST team for collaborating on the <a href="https://openfmri.org" target="_blank">OpenfMRI</a> platform.</p>
+
 
         </div>
       </div>
 
 
-      <div id="features" class="section p-features">
+      <div id="components" class="section p-components">
 
         <div class="subtlecircle sectiondivider faicon">
           <span class="fa-stack">
             <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-check fa-stack-1x"></i>
+            <i class="fa fa-cogs fa-stack-1x"></i>
           </span>
-          <h5 class="icon-title">features</h5>
+          <h5 class="icon-title">components</h5>
         </div>
 
         <div class="container left">
-          <h1 id="features">Features</h1>
+          <h1 id="components">Components</h1>
 
-<p>The focus of SciTran is the development of a scientific data management system – SDM. Below we describe some of the features of SDM that make it different from many other data management solutions available.</p>
+<p>The following actively-developed SciTran components are available:</p>
 
 <table>
-    <tr>
-        <td vertical-align="middle">
-            <strongg>Data Integrity &nbsp;</strongg> Raw data from the MRI scanner are automatically formatted and stored in SDM - no user action is needed. This ensures data integrity and eliminates the possibility of data loss.
-        </td>
-        <td width="15%"><img src="images/features/db_mri.png" width="80%" /></td>
-    </tr>
-
-    <tr>
-        <td vertical-align="middle">
-            <strongg>Archiving &nbsp;</strongg> Centralized data backup is greatly simplified because all the data are in a single location rather than distributed amongst many sites. Individual labs need not arrange separate backup protocols. This supports data integrity.
-        </td>
-        <td width="12%"><img src="images/features/db_archive.png" width="80%" /></td>
-    </tr>
-
-    <tr>
-        <td vertical-align="middle">
-            <strongg>Retrieval &nbsp;</strongg> At the end of a measurement session, users download their data from a web-page. To find your lab’s data, simply log in to the SDM database and you will see all data that is open to your lab.
-        </td>
-        <td width="12%"><img src="images/features/db_retrieve.png" width="80%" /></td>
-    </tr>
-
-    <tr>
-        <td vertical-align="middle">
-            <strongg>Organization &nbsp;</strongg> Files and experiments are stored using a standard naming convention that helps lab members keep track of their experiments.
-        </td>
-        <td width="12%"><img src="images/features/db_organize.png" width="80%" /></td>
-    </tr>
-
-    <tr>
-        <td vertical-align="middle">
-            <strongg>Uploading &nbsp;</strongg> Data can be added to SDM by using a simple web-interface or by placing files in an identified directory. In this way older datasets or datasets collected at another institution can be brought into SDM.
-        </td>
-        <td width="12%"><img src="images/features/db_upload.png" width="80%" /></td>
-    </tr>
-
-    <tr>
-        <td vertical-align="middle">
-            <strongg>Sharing and Rights Management &nbsp;</strongg> By default, only the PI's group has access to the data. Using a simple web-interface, however, the PI can grant access to other individuals or groups. Access can be granted to entire projects or to individual datasets. The PI has the option to make the data publicly available.
-        </td>
-        <td width="12%"><img src="images/features/db_sharing.png" width="80%" /></td>
-    </tr>
-
-    <tr>
-        <td vertical-align="middle">
-            <strongg>Search and Discovery &nbsp;</strongg> The SDM database can be searched in many ways, such as by investigator, subject type, data type, and so forth. When potentially useful data are discovered from another lab, it is simple to request the PI for access.
-        </td>
-        <td width="12%"><img src="images/features/db_search.png" width="80%" /></td>
-    </tr>
-
-    <tr>
-        <td vertical-align="middle">
-            <strongg>Quality Assurance &nbsp;</strongg> Data entered into SDM are routinely analyzed to identify instrument and data quality. These are run in the background, without user intervention. The results are summarized both for the MRI Center staff and for the users.
-        </td>
-        <td width="12%"><img src="images/features/db_quality.png" width="80%" /></td>
-    </tr>
-
-    <tr>
-        <td vertical-align="middle">
-            <strongg>Transparency &nbsp;</strongg> SciTran is open-source software, released under the MIT license. Our code is hosted on <a href="http://github.com/scitran/">GitHub</a>. You can also access our technical documentation on our GitHub Site.
-        </td>
-        <td width="12%"><img src="images/features/db_open.png" width="80%" /></td>
-    </tr>
+  <tr>
+    <td vertical-align="middle">
+      <a href="https://github.com/scitran/core" target="_blank"><strongg>Core</strongg></a> &nbsp; RESTful HTTP API, written in Python and backed by MongoDB
+    </td>
+  </tr>
+  <tr>
+    <td vertical-align="middle">
+      <a href="https://github.com/scitran/reaper" target="_blank"><strongg>Reaper</strongg></a> &nbsp; Instrument integration, mainly focused on DICOM
+    </td>
+  </tr>
+  <tr>
+    <td vertical-align="middle">
+      <a href="https://github.com/scitran/client" target="_blank"><strongg>Client</strongg></a> &nbsp; MATLAB and Python APIs for SciTran Core
+    </td>
+  </tr>
+  <tr>
+    <td vertical-align="middle">
+      <a href="https://github.com/scitran/organizer" target="_blank"><strongg>Organizer</strongg></a> &nbsp; Data Organizer desktop app
+    </td>
+  </tr>
+  <tr>
+    <td vertical-align="middle">
+      <a href="https://github.com/scitran-apps" target="_blank"><strongg>Apps</strongg></a> &nbsp; Reproducible scientific applications
+    </td>
+  </tr>
 </table>
-
-        </div>
-      </div>
-
-
-      <div id="technology" class="section p-technology">
-
-        <div class="subtlecircle sectiondivider faicon">
-          <span class="fa-stack">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-power-off fa-stack-1x"></i>
-          </span>
-          <h5 class="icon-title">technology</h5>
-        </div>
-
-        <div class="container center">
-          <h1 id="technology">Technology</h1>
-
-<p><img class="bodyimage" src="images/scitran_diagram.svg" width="100%" /></p>
-
-<!--
-<h3><a href="/docs" style="text-decoration:none">View the technical documentation</a></h3>
--->
 
         </div>
       </div>
@@ -183,24 +116,45 @@
 
 <table style="text-align:center">
     <tr>
-        <td width="33%"><a href="//github.com/wandell"><img class="round" src="images/team/wandell.jpg" width="125" /></a></td>
-        <td width="33%"><a href="//github.com/gsfr"><img class="round" src="images/team/schaefer.png" width="125" /></a></td>
-        <td width="33%"><a href="//github.com/lmperry"><img class="round" src="images/team/perry.png" width="125" /></a></td>
+        <td width="33%">
+          <a href="//github.com/wandell">
+            <img class="round" src="images/team/wandell.jpg" width="125" style="margin: 15px" /><br />
+            <stronger>Brian Wandell</stronger><br />
+            </a>
+          <jobtitle>Project Lead</jobtitle>
+        </td>
+        <td width="33%">
+          <a href="//github.com/gsfr">
+            <img class="round" src="images/team/schaefer.png" width="125" style="margin: 15px" /><br />
+            <stronger>Gunnar Schaefer</stronger><br />
+            </a>
+          <jobtitle>Engineering Lead</jobtitle>
+        </td>
+        <td width="33%">
+          <a href="//github.com/lmperry">
+            <img class="round" src="images/team/perry.png" width="125" style="margin: 15px" /><br />
+            <stronger>Michael Perry</stronger><br />
+            </a>
+          <jobtitle>Software Engineer</jobtitle>
+        </td>
     </tr>
     <tr>
-        <td width="33%"><stronger>Brian Wandell</stronger><br /><jobtitle>Project Lead</jobtitle></td>
-        <td width="33%"><stronger>Gunnar Schaefer</stronger><br /><jobtitle>Software Engineering Lead</jobtitle></td>
-        <td width="33%"><stronger>Michael Perry</stronger><br /><jobtitle>Project Manager</jobtitle></td>
-    </tr>
-    <tr>
-        <td width="33%"><a href="//github.com/rentzso"><img class="round" src="images/team/frigato.jpg" width="125" /></a></td>
-        <td width="33%"><a href="//github.com/arokem"><img class="round" src="images/team/rokem.png" width="125" /></a></td>
-        <td width="33%"><a href="//github.com/rfdougherty"><img class="round" src="images/team/dougherty.png" width="125" /></a></td>
-    </tr>
-    <tr>
-        <td width="33%"><stronger>Renzo Frigato</stronger><br /><jobtitle>Software Engineer</jobtitle></td>
-        <td width="33%"><stronger>Ariel Rokem</stronger><br /><jobtitle>Data Scientist</jobtitle></td>
-        <td width="33%"><stronger>Robert Dougherty</stronger><br /><jobtitle>Scientific Advisor</jobtitle></td>
+        <td width="33%">
+          <a href="//github.com/rentzso">
+            <img class="round" src="images/team/frigato.jpg" width="125" style="margin: 15px" /><br />
+            <stronger>Renzo Frigato</stronger><br />
+            </a>
+          <jobtitle>Software Engineer</jobtitle>
+        </td>
+        <td width="33%">
+        </td>
+        <td width="33%">
+          <a href="//github.com/rfdougherty">
+            <img class="round" src="images/team/dougherty.png" width="125" style="margin: 15px" /><br />
+            <stronger>Robert Dougherty</stronger><br />
+            </a>
+          <jobtitle>Scientific Advisor</jobtitle>
+        </td>
     </tr>
 </table>
 
@@ -245,9 +199,7 @@
 
         <table id="footertable">
         <tr>
-        <td width="33%"><a href="//github.com/scitran/core/wiki" style="text-decoration:none"><h5>Documentation</h5></td>
-        <td width="33%"><a href="/" style="text-decoration:none"><h5>&#8613;</h5></a></td>
-        <td width="33%"><a href="//vistalab.stanford.edu/contact/" style="text-decoration:none" target="blank_"><h5>Contact</h5></a></td>
+        <td width="33%"><a href="#intro" style="text-decoration:none"><h5>&#8613;</h5></a></td>
         </tr>
         </table>
 
@@ -257,6 +209,4 @@
 
 
 </body>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="site.js"></script>
 </html>
